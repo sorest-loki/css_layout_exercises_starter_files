@@ -1,4 +1,4 @@
-.row {
+.container {
 	padding-left: 60px;
 	padding-right: 60px;
 }
@@ -10,7 +10,7 @@ nav {
 	height: 60px;
 }
 
-img[src*="icon"] {
+nav > img {
 	height: 50px;
 	margin-top: 5px;
   	margin-bottom: 5px;
@@ -19,9 +19,51 @@ img[src*="icon"] {
   	border: 1px solid black;
 }
 
-div {
-	position: relative;
+/*nav .icon-img {
+  height: 50px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid black;
+} same as nav > img but no need to make a class in the img*/
+
+nav ul {
+  display: inline-block; /* gets the img and list going horizontally */
+  list-style: none; /* removes the bullet points for all listed items*/
 }
+
+nav li {
+  display: inline-block; /* gets the list items going horizontally */
+}
+
+nav li::after {
+  content: "|";
+  margin-left: 5px;
+}
+
+nav a:hover {
+  color: black;
+} /* not shown in the project, but good practice with anchor pseudo-classes */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Above code lays out the nav bar */
+
+main {
+  padding-top: 90px;/* positions the border box more towards the middle */
+  min-width: 1000px; /*not sure why this is here; it's not needed*/
+} 
 
 .box {
 	width: 600px;
@@ -30,18 +72,19 @@ div {
 	margin-right: auto;
 	margin-left: auto;
 	top: 200px;
+	/*margin-top: 150px; solution code*/
 	position: relative;
-}
+} 
 
-img {
-	width: 200px;
-	height: 200px;
-}
 
 img[src*="cat"] {
 	position: absolute;
     right: 485px;
     bottom: 200px;
+    /*top: -90px;
+  	left: -90px; solution code. mine is pretty close in terms of opposite positioning*/
+    width: 200px;
+	height: 200px;
     /*border: 1px solid blue;*/
 }
 
@@ -49,14 +92,54 @@ img[src*="dog"] {
 	position: absolute;
     left: 455px;
     top: 215px;
+    /*bottom: -120px;
+  	right: -60px; solution code. mine is pretty close in terms of opposite positioning*/
+    width: 200px;
+	height: 200px;
     /*border: 1px solid blue;*/
 }
 
-#background {
+/* Solution code for positioning space pet pics. solution used classes*/
+
+/*.spacecat, .spacedog {
+  position: absolute;
+  width: 200px;
+}
+
+.spacecat {
+  top: -90px;
+  left: -90px;
+}
+
+.spacedog {
+  bottom: -120px;
+  right: -60px;
+}*/
+
+
+/* code above lays out the border box with space pets positioned at the corners*/
+
+
+
+
+
+
+
+
+
+
+/* the following code places a full-cover background on the webpage*/
+
+/*.class {
 	min-height: 100%;
 	min-width: 1024px;
 	width: 100%;
 	height: 100%;
 	top: 0;
   	left: 0;
+}*/
+
+body {
+ 	background: url(../images/outerspace_landscape.jpeg) no-repeat;
+  	background-size: cover;
 }
